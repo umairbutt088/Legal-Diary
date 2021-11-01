@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import CustomHeader from '../../../Components/header';
 import {appImages} from '../../../utilities/assets';
-import {size, WP} from '../../../utilities';
+import {colors, size, WP} from '../../../utilities';
 import styles from './styles';
 
 const DashBoard = ({navigation}) => {
@@ -30,18 +30,15 @@ const DashBoard = ({navigation}) => {
           resizeMode="stretch"
         />
       </View>
-      <View
-        style={{
-          flex: 1,
-          alignItems: 'center',
-          justifyContent: 'center',
-          position: 'absolute',
-        }}>
+      <View style={styles.mapwrappingView}>
+        <View style={{padding: WP('10')}}>
+          <Text style={styles.titleTextStyle}>DashBoard</Text>
+        </View>
         {courtName.map(item => {
           return (
             <TouchableOpacity
               key={item.key}
-              onPress={() => navigation.navigate(item.screen)}
+              onPress={() => navigation.navigate('TabBar')}
               style={styles.mapViewContStyle}>
               <Text
                 style={{

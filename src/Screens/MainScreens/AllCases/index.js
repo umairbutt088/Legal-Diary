@@ -1,5 +1,6 @@
 import React from 'react';
 import {Text, View} from 'react-native';
+import CustomHeader from '../../../Components/header';
 import styles from './styles';
 
 const AllCases = () => {

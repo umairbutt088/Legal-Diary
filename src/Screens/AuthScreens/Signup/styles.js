@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     height: WP('12'),
     alignItems: 'center',
     alignSelf: 'center',
-    marginTop: WP('10'),
+    marginVertical: WP('10'),
     backgroundColor: colors.drakBlack,
     borderRadius: WP('2'),
   },

@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: colors.buttonColor,
+    backgroundColor: colors.white,
   },
 });
 export default styles;

@@ -5,7 +5,6 @@ import {appImages, WP} from '../../../utilities';
 import CustomTextInput from '../../../Components/TextInput';
 import Custombutton from '../../../Components/button';
 import CustomHeader from '../../../Components/header';
-import {NavigationContainer} from '@react-navigation/native';
 
 const Login = ({navigation}) => {
   const [username, setUsername] = useState('wjwj');

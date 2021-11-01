@@ -1,4 +1,4 @@
-import {HP, WP, colors} from '../../../utilities';
+import {HP, WP, size, colors} from '../../../utilities';
 import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
@@ -17,6 +17,17 @@ const styles = StyleSheet.create({
     height: WP('100%'),
     width: WP('100%'),
     opacity: 0.1,
+  },
+  titleTextStyle: {
+    fontSize: size.h1,
+    fontWeight: 'bold',
+    color: colors.drakBlack,
+  },
+  mapwrappingView: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    position: 'absolute',
   },
   mapViewContStyle: {
     padding: WP('5'),

@@ -15,6 +15,7 @@ const CustomHeader = ({onPress, isShow, contStyle}) => {
           />
         ) : null}
       </TouchableOpacity>
+      {/* <Text>Hello</Text> */}
     </View>
   );
 };

@@ -56,7 +56,7 @@ const SignUp = ({navigation}) => {
             resizeMode="stretch"
           />
         </View>
-        <View style={{flex: 1, position: 'absolute'}}>
+        <View style={{position: 'absolute'}}>
           <View style={styles.titleContainer}>
             <Text style={styles.titleTextStyle}>SignUp</Text>
           </View>
@@ -93,13 +93,13 @@ const SignUp = ({navigation}) => {
               keyboardType={'default'}
               onChangeText={value => setRepassword(value)}
             />
+            <Custombutton
+              title={'Sign Up'}
+              buttonStyle={styles.buttonContainer}
+              titleStyle={styles.btnTitleStyle}
+              onPressHandler={onSubmit}
+            />
           </ScrollView>
-          <Custombutton
-            title={'Sign Up'}
-            buttonStyle={styles.buttonContainer}
-            titleStyle={styles.btnTitleStyle}
-            onPressHandler={onSubmit}
-          />
         </View>
       </View>
     </SafeAreaView>

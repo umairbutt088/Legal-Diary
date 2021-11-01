@@ -16,8 +16,15 @@ import PendingCases from './src/Screens/MainScreens/PendingCases';
 import ToDayCases from './src/Screens/MainScreens/TodayCases';
 import SearchCase from './src/Screens/MainScreens/Search-Case';
 import Calender from './src/Screens/MainScreens/Calender';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import {Icon} from 'react-native-elements';
+import {View} from 'react-native';
+import {colors, size, WP} from './src/utilities';
+import {getHeaderTitle} from '@react-navigation/elements';
 
 const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
 
 const App = () => {
   return (
@@ -34,14 +41,96 @@ const App = () => {
         <Stack.Screen name="TribunalCases" component={TribunalCases} />
         <Stack.Screen name="HighCourtCases" component={HighCourtCases} />
         <Stack.Screen name="SupremeCourtCases" component={SupremeCourtCases} />
-        <Stack.Screen name="AddNewCases" component={AddNewCases} />
-        <Stack.Screen name="AllCases" component={AllCases} />
-        <Stack.Screen name="PendingCases" component={PendingCases} />
-        <Stack.Screen name="ToDayCases" component={ToDayCases} />
-        <Stack.Screen name="SearchCase" component={SearchCase} />
-        <Stack.Screen name="Calender" component={Calender} />
+        <Stack.Screen name="TabBar" component={TabBar} />
+        {/* <Stack.Screen name="Calender" component={Calender} /> */}
       </Stack.Navigator>
     </NavigationContainer>
+  );
+};
+//
+//
+//
+//
+//
+//
+//
+
+/////////// Tab Bar ////////////
+const TabBar = () => {
+  return (
+    <Tab.Navigator
+      initialRouteName={'AddNewCases'}
+      screenOptions={{
+        tabBarIconStyle: {borderColor: 'green'},
+        tabBarItemStyle: {
+          backgroundColor: 'transparent',
+          height: WP('16'),
+        },
+        headerShown: false,
+        tabBarStyle: {
+          position: 'absolute',
+          backgroundColor: 'transparent',
+          height: WP('23'),
+          // paddingHorizontal: WP('5'),
+        },
+        tabBarLabelStyle: {fontSize: size.small, fontWeight: '700'},
+        // tabBarBadge: 3,
+      }}>
+      <Tab.Screen
+        name="AllCases"
+        component={AllCases}
+        options={{
+          // title: 'false',
+          tabBarActiveTintColor: colors.drakBlack,
+          tabBarInactiveTintColor: colors.borderColor,
+          tabBarLabel: 'All',
+          tabBarIcon: () => <Icon name="cases" size={30} />,
+          tabBarBadge: 3,
+        }}
+      />
+      <Tab.Screen
+        name="Pending"
+        component={PendingCases}
+        options={{
+          tabBarActiveTintColor: colors.drakBlack,
+          tabBarInactiveTintColor: colors.borderColor,
+          tabBarIcon: () => (
+            <Icon name="pending-actions" color="#000" size={30} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="AddNew"
+        component={AddNewCases}
+        options={{
+          tabBarActiveTintColor: colors.drakBlack,
+          tabBarInactiveTintColor: colors.borderColor,
+          tabBarIcon: () => (
+            <View style={{height: WP(15)}}>
+              <Icon name="add-circle-outline" color="#000" size={50} />
+            </View>
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="ToDay"
+        component={ToDayCases}
+        options={{
+          tabBarActiveTintColor: colors.drakBlack,
+          tabBarInactiveTintColor: colors.borderColor,
+          tabBarIcon: () => <Icon name="today" color="#000" size={30} />,
+        }}
+      />
+      <Tab.Screen
+        name="Search"
+        component={SearchCase}
+        options={{
+          tabBarActiveTintColor: colors.drakBlack,
+          tabBarInactiveTintColor: colors.borderColor,
+          tabBarIcon: () => <Icon name="search" color="#000" size={30} />,
+        }}
+      />
+    </Tab.Navigator>
   );
 };
 
