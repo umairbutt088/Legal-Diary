@@ -1,12 +1,26 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {View, SafeAreaView, ImageBackground} from 'react-native';
+import CustomHeader from '../../../Components/header';
 import styles from './styles';
+import {appImages} from '../../../utilities';
 
-const PendingCases = () => {
+const PendingCases = ({navigation}) => {
   return (
-    <View style={styles.mainContainer}>
-      <Text>This is Pending Cases Screen</Text>
-    </View>
+    <SafeAreaView style={styles.mainContainer}>
+      <CustomHeader
+        isShow={true}
+        isTitle={true}
+        title="Pending Cases"
+        onPress={() => navigation.navigate('DashBoard')}
+      />
+      <View style={styles.backgroundImgContStyle}>
+        <ImageBackground
+          source={appImages.appLogo}
+          style={styles.backgroundImgStyle}
+          resizeMode="stretch"
+        />
+      </View>
+    </SafeAreaView>
   );
 };
 

@@ -1,12 +1,27 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {View, SafeAreaView, ImageBackground} from 'react-native';
+import CustomHeader from '../../../Components/header';
 import styles from './styles';
+import {appImages} from '../../../utilities';
 
-const AddNewCases = () => {
+const AddNewCases = ({navigation}) => {
   return (
-    <View style={styles.mainContainer}>
-      <Text>This is Add New Cases Screen</Text>
-    </View>
+    <SafeAreaView style={styles.mainContainer}>
+      <CustomHeader
+        isShow={true}
+        isTitle={true}
+        isShowMenu={true}
+        title="Add New Cases"
+        onPress={() => navigation.navigate('DashBoard')}
+      />
+      <View style={styles.backgroundImgContStyle}>
+        <ImageBackground
+          source={appImages.appLogo}
+          style={styles.backgroundImgStyle}
+          resizeMode="stretch"
+        />
+      </View>
+    </SafeAreaView>
   );
 };
 

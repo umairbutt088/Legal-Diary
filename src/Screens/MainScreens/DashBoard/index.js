@@ -38,7 +38,7 @@ const DashBoard = ({navigation}) => {
           return (
             <TouchableOpacity
               key={item.key}
-              onPress={() => navigation.navigate('TabBar')}
+              onPress={() => navigation.navigate('Drawer')}
               style={styles.mapViewContStyle}>
               <Text
                 style={{

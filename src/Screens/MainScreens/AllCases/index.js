@@ -1,13 +1,26 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {View, SafeAreaView, ImageBackground} from 'react-native';
 import CustomHeader from '../../../Components/header';
 import styles from './styles';
+import {appImages} from '../../../utilities';
 
-const AllCases = () => {
+const AllCases = ({navigation}) => {
   return (
-    <View style={styles.mainContainer}>
-      <Text>This is All Cases Screen</Text>
-    </View>
+    <SafeAreaView style={styles.mainContainer}>
+      <CustomHeader
+        isShow={true}
+        isTitle={true}
+        title="All Cases"
+        onPress={() => navigation.navigate('DashBoard')}
+      />
+      <View style={styles.backgroundImgContStyle}>
+        <ImageBackground
+          source={appImages.appLogo}
+          style={styles.backgroundImgStyle}
+          resizeMode="stretch"
+        />
+      </View>
+    </SafeAreaView>
   );
 };
 

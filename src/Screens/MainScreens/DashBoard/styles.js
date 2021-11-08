@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
   },
   mapViewContStyle: {
-    padding: WP('5'),
+    padding: WP('3'),
     width: WP('90'),
     backgroundColor: 'transparent',
     marginBottom: WP('5'),

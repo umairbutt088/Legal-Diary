@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
   inPutContainer: {
     borderColor: colors.darkGrey,
     borderWidth: WP('0.2'),
-    padding: WP('4'),
+    padding: WP('3'),
     width: WP('90'),
     borderRadius: WP('2'),
     fontSize: size.normal,

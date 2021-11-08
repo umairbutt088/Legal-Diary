@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler';
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -21,17 +22,20 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import {Icon} from 'react-native-elements';
 import {View} from 'react-native';
 import {colors, size, WP} from './src/utilities';
-import {getHeaderTitle} from '@react-navigation/elements';
+import {createDrawerNavigator} from '@react-navigation/drawer';
+
+import CustomDrwer from './src/Routes/MainNavigation/tabBarNavigator';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
+const Drawer = createDrawerNavigator();
 
 const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{headerShown: false}}
-        initialRouteName="Calender">
+        initialRouteName="SignUp">
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="DashBoard" component={DashBoard} />
@@ -42,18 +46,39 @@ const App = () => {
         <Stack.Screen name="HighCourtCases" component={HighCourtCases} />
         <Stack.Screen name="SupremeCourtCases" component={SupremeCourtCases} />
         <Stack.Screen name="TabBar" component={TabBar} />
-        {/* <Stack.Screen name="Calender" component={Calender} /> */}
+        <Stack.Screen name="Drawer" component={DrawerStack} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 };
-//
-//
-//
-//
-//
-//
-//
+
+const DrawerStack = () => {
+  return (
+    <Drawer.Navigator
+      drawerContent={props => <CustomDrwer {...props} />}
+      screenOptions={{
+        headerShown: false,
+        drawerType: 'front',
+        drawerPosition: 'right',
+        drawerStyle: {
+          backgroundColor: '#fff',
+          height: WP('180%'),
+          alignSelf: 'center',
+          marginTop: WP('20'),
+          width: WP('70'),
+          borderTopLeftRadius: WP('5'),
+          borderBottomLeftRadius: WP('5'),
+        },
+      }}>
+      <Drawer.Screen name="MainTab" component={TabBar} />
+      <Drawer.Screen name="AllCases" component={AllCases} />
+      <Drawer.Screen name="PendingCases" component={PendingCases} />
+      <Drawer.Screen name="AddNewCases" component={AddNewCases} />
+      <Drawer.Screen name="ToDayCases" component={ToDayCases} />
+      <Stack.Screen name="Calender" component={Calender} />
+    </Drawer.Navigator>
+  );
+};
 
 /////////// Tab Bar ////////////
 const TabBar = () => {

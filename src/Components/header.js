@@ -1,21 +1,45 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {Icon} from 'react-native-elements';
-import {WP} from '../utilities';
+import {size, WP} from '../utilities';
 
-const CustomHeader = ({onPress, isShow, contStyle}) => {
+const CustomHeader = ({
+  onPress,
+  isShow,
+  contStyle,
+  title,
+  isTitle,
+  isShowMenu,
+}) => {
   return (
     <View style={[styles.mainContainer, contStyle]}>
       <TouchableOpacity onPress={onPress}>
         {isShow ? (
-          <Icon
-            name="arrow-left"
-            type="material-community"
-            style={styles.iconStyle}
-          />
+          <View style={styles.iconContainerStyle}>
+            <Icon
+              name="arrow-left"
+              type="material-community"
+              style={styles.iconStyle}
+            />
+          </View>
         ) : null}
       </TouchableOpacity>
-      {/* <Text>Hello</Text> */}
+      {isTitle ? (
+        <View style={styles.titleContainerStyle}>
+          <Text style={styles.titleTextStyle}>{title}</Text>
+        </View>
+      ) : null}
+      <TouchableOpacity onPress={onPress}>
+        {isShowMenu ? (
+          <View style={styles.iconContainerStyle}>
+            <Icon
+              name="menu"
+              type="material-community"
+              style={styles.iconStyle}
+            />
+          </View>
+        ) : null}
+      </TouchableOpacity>
     </View>
   );
 };
@@ -25,15 +49,29 @@ export default CustomHeader;
 const styles = StyleSheet.create({
   mainContainer: {
     backgroundColor: 'transparent',
-    height: WP('10'),
+    height: WP('12'),
     width: WP('100'),
-    paddingHorizontal: WP('3'),
+    flexDirection: 'row',
+  },
+  iconContainerStyle: {
+    height: WP('12'),
+    width: WP('12'),
+    alignItems: 'center',
     justifyContent: 'center',
-    color: '#fff',
   },
   iconStyle: {
     width: WP('10'),
     backgroundColor: 'transparent',
-    left: 0,
+  },
+  titleContainerStyle: {
+    height: WP('12'),
+    width: WP('75'),
+    backgroundColor: 'transparent',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  titleTextStyle: {
+    fontSize: size.h5,
+    fontWeight: 'bold',
   },
 });
