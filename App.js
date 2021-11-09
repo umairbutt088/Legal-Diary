@@ -18,7 +18,6 @@ import ToDayCases from './src/Screens/MainScreens/TodayCases';
 import SearchCase from './src/Screens/MainScreens/Search-Case';
 import Calender from './src/Screens/MainScreens/Calender';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {Icon} from 'react-native-elements';
 import {View} from 'react-native';
 import {colors, size, WP} from './src/utilities';
@@ -86,17 +85,16 @@ const TabBar = () => {
     <Tab.Navigator
       initialRouteName={'AddNewCases'}
       screenOptions={{
-        tabBarIconStyle: {borderColor: 'green'},
+        tabBarIconStyle: {},
         tabBarItemStyle: {
           backgroundColor: 'transparent',
-          height: WP('16'),
+          height: WP('13'),
         },
         headerShown: false,
         tabBarStyle: {
           position: 'absolute',
-          backgroundColor: 'transparent',
-          height: WP('23'),
-          // paddingHorizontal: WP('5'),
+          backgroundColor: '#fff',
+          height: WP('18'),
         },
         tabBarLabelStyle: {fontSize: size.small, fontWeight: '700'},
         // tabBarBadge: 3,
