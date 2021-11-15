@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import CustomHeader from '../../../Components/header';
 import styles from './styles';
-import {appImages, WP} from '../../../utilities';
+import {WP} from '../../../utilities';
 import GeneralForm from '../../../Components/Add-Cases-Form';
 
 const AllCases = ({navigation}) => {
@@ -20,11 +20,13 @@ const AllCases = ({navigation}) => {
         title="All Cases"
         onPress={() => navigation.navigate('DashBoard')}
       />
-      <ScrollView style={{marginBottom: WP('20')}}>
-        <View style={{alignItems: 'center', backgroundColor: 'transparent'}}>
-          <GeneralForm heading="Case Details" />
-          <GeneralForm heading="Party Details" />
-          <GeneralForm />
+      <ScrollView showsVerticalScrollIndicator={false} style={{height: '100%'}}>
+        <View style={{marginBottom: WP('20')}}>
+          <View style={{alignItems: 'center', backgroundColor: 'transparent'}}>
+            <GeneralForm heading="Case Details" />
+            {/* <GeneralForm heading="Party Details" /> */}
+            {/* <GeneralForm /> */}
+          </View>
         </View>
       </ScrollView>
     </SafeAreaView>
