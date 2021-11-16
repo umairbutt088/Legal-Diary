@@ -23,7 +23,12 @@ const AllCases = ({navigation}) => {
       <ScrollView showsVerticalScrollIndicator={false} style={{height: '100%'}}>
         <View style={{marginBottom: WP('20')}}>
           <View style={{alignItems: 'center', backgroundColor: 'transparent'}}>
-            <GeneralForm heading="Case Details" />
+            <GeneralForm
+              heading="Case Details"
+              CaseTitle="Case Title :"
+              CourtName="Court Name :"
+              CourtType="Court Type :"
+            />
             {/* <GeneralForm heading="Party Details" /> */}
             {/* <GeneralForm /> */}
           </View>
