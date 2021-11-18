@@ -2,30 +2,24 @@ import React, {useState} from 'react';
 import Modal from 'react-native-modal';
 import CustomTextInput from './TextInput';
 import {Icon} from 'react-native-elements';
-import {colors, size, WP} from '../utilities';
+import {colors, size, fontStyle, WP} from '../utilities';
 import DropDownPicker from 'react-native-dropdown-picker';
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 
-const GeneralForm = ({
-  heading,
-  CaseTitle,
-  CourtName,
-  CourtType,
-  navigation,
-}) => {
+const GeneralForm = ({heading, CaseTitle, CourtName, CourtType}) => {
   // const [modalVisible, setModalVisible] = useState(false);
 
-  const [isModalVisible, setModalVisible] = useState(false);
+  // const [isModalVisible, setModalVisible] = useState(false);
 
-  const toggleModal = () => {
-    setModalVisible(!isModalVisible);
-  };
-  const [open, setOpen] = useState(true);
-  const [value, setValue] = useState(null);
-  const [judge, setJudge] = useState([
-    {label: 'Apple', value: 'apple'},
-    {label: 'Banana', value: 'banana'},
-  ]);
+  // const toggleModal = () => {
+  //   setModalVisible(!isModalVisible);
+  // };
+  // const [open, setOpen] = useState(true);
+  // const [value, setValue] = useState(null);
+  // const [judge, setJudge] = useState([
+  //   {label: 'Apple', value: 'apple'},
+  //   {label: 'Banana', value: 'banana'},
+  // ]);
 
   return (
     <View style={styles.mainContainer}>
@@ -39,13 +33,13 @@ const GeneralForm = ({
           placeholder="Title"
         />
       </View>
-      {/* Court Name Code */}
-      <View style={styles.courtNameContainer}>
+      <View>
+        {/* Court Name Code */}
+        {/* <View style={styles.courtNameContainer}>
         <Text style={styles.caseTitleTextStyle}>{CourtName}</Text>
         <DropDownPicker
           zIndex={500}
           multiple={true}
-          // disableBorderRadius={true}
           open={open}
           value={value}
           items={judge}
@@ -68,14 +62,13 @@ const GeneralForm = ({
             style={{height: WP('6')}}
           />
         </TouchableOpacity>
-      </View>
-      {/* case Type Code*/}
-      <View style={styles.courtNameContainer}>
+      </View> */}
+        {/* case Type Code*/}
+        {/* <View style={styles.courtNameContainer}>
         <Text style={styles.caseTitleTextStyle}>{CourtType}</Text>
         <DropDownPicker
           zIndex={500}
           multiple={true}
-          // disableBorderRadius={true}
           open={open}
           value={value}
           items={judge}
@@ -98,8 +91,8 @@ const GeneralForm = ({
             style={{height: WP('6')}}
           />
         </TouchableOpacity>
-      </View>
-      <Modal isVisible={isModalVisible}>
+      </View> */}
+        {/* <Modal isVisible={isModalVisible}>
         <View
           style={{
             height: WP('50'),
@@ -133,7 +126,8 @@ const GeneralForm = ({
             </TouchableOpacity>
           </View>
         </View>
-      </Modal>
+      </Modal> */}
+      </View>
     </View>
   );
 };
@@ -161,8 +155,9 @@ const styles = StyleSheet.create({
   headingTextStyle: {
     fontSize: size.large,
     color: colors.white,
-    fontWeight: 'bold',
+    // fontWeight: 'bold',
     textAlign: 'center',
+    fontFamily: 'Roboto-Black',
   },
   caseTitleTextMainCont: {
     height: WP('10'),
