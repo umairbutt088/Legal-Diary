@@ -52,6 +52,7 @@ const styles = StyleSheet.create({
     height: WP('12'),
     width: WP('100'),
     flexDirection: 'row',
+    borderBottomWidth: WP('0.05'),
   },
   iconContainerStyle: {
     height: WP('12'),

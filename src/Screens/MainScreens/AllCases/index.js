@@ -1,15 +1,14 @@
 import React from 'react';
-import {
-  View,
-  SafeAreaView,
-  Text,
-  ImageBackground,
-  ScrollView,
-} from 'react-native';
+import {View, SafeAreaView, ScrollView} from 'react-native';
 import CustomHeader from '../../../Components/header';
-import styles from './styles';
 import {WP} from '../../../utilities';
+import styles from './styles';
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scrollview';
 import GeneralForm from '../../../Components/Add-Cases-Form';
+import PlaintifDetails from '../../../Components/Plaintif-Details';
+import RespondentDetails from '../../../Components/Respondent-Detail';
+import Custombutton from '../../../Components/button';
+import CaseDetailCompile from '../../../Components/case-Detail-compile';
 
 const AllCases = ({navigation}) => {
   return (
@@ -22,16 +21,9 @@ const AllCases = ({navigation}) => {
       />
       <ScrollView showsVerticalScrollIndicator={false} style={{height: '100%'}}>
         <View style={{marginBottom: WP('20')}}>
-          <View style={{alignItems: 'center', backgroundColor: 'transparent'}}>
-            <GeneralForm
-              heading="Case Details"
-              CaseTitle="Case Title :"
-              CourtName="Court Name :"
-              CourtType="Court Type :"
-            />
-            {/* <GeneralForm heading="Party Details" /> */}
-            {/* <GeneralForm /> */}
-          </View>
+          <KeyboardAwareScrollView>
+            <CaseDetailCompile caseTitle="Umair Vs. Ali" />
+          </KeyboardAwareScrollView>
         </View>
       </ScrollView>
     </SafeAreaView>
