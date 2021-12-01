@@ -34,6 +34,7 @@ const AllCases = ({navigation}) => {
                 CourtType="Court Type :"
                 CaseNo="Case No/Y :"
                 Behalf="On Behalf Of :"
+                Section="Under Section :"
                 Date="Date of filling Case :"
               />
               {/* <GeneralForm heading="Party Details" /> */}

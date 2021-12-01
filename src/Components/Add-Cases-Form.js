@@ -13,6 +13,7 @@ const GeneralForm = ({
   CourtType,
   CaseNo,
   Behalf,
+  Section,
   Date,
 }) => {
   // const [modalVisible, setModalVisible] = useState(false);
@@ -172,6 +173,15 @@ const GeneralForm = ({
         <CustomTextInput
           inputContStyle={styles.caseTitleInputContStyle}
           placeholder="Client Name"
+        />
+      </View>
+      <View style={styles.caseTitleTextMainCont}>
+        <View style={styles.caseTitleTextContStyle}>
+          <Text style={styles.caseTitleTextStyle}>{Section}</Text>
+        </View>
+        <CustomTextInput
+          inputContStyle={styles.caseTitleInputContStyle}
+          placeholder="Under Section"
         />
       </View>
       <View style={styles.caseTitleTextMainCont}>

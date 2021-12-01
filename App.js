@@ -5,6 +5,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Login from './src/Screens/AuthScreens/Login/Index';
 import SignUp from './src/Screens/AuthScreens/Signup/Index';
 import DashBoard from './src/Screens/MainScreens/DashBoard';
+import CaseDetails from './src/Screens/MainScreens/Case-Details';
 import CivilCases from './src/Screens/MainScreens/Civil-Cases';
 import CriminalCases from './src/Screens/MainScreens/Criminal-Cases';
 import FamilyCases from './src/Screens/MainScreens/Family-Cases';
@@ -44,6 +45,7 @@ const App = () => {
         <Stack.Screen name="TribunalCases" component={TribunalCases} />
         <Stack.Screen name="HighCourtCases" component={HighCourtCases} />
         <Stack.Screen name="SupremeCourtCases" component={SupremeCourtCases} />
+        <Stack.Screen name="CaseDetails" component={CaseDetails} />
         <Stack.Screen name="TabBar" component={TabBar} />
         <Stack.Screen name="Drawer" component={DrawerStack} />
       </Stack.Navigator>

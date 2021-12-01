@@ -22,7 +22,10 @@ const AllCases = ({navigation}) => {
       <ScrollView showsVerticalScrollIndicator={false} style={{height: '100%'}}>
         <View style={{marginBottom: WP('20')}}>
           <KeyboardAwareScrollView>
-            <CaseDetailCompile caseTitle="Umair Vs. Ali" />
+            <CaseDetailCompile
+              navigation={navigation}
+              caseTitle="Umair Vs. Ali"
+            />
           </KeyboardAwareScrollView>
         </View>
       </ScrollView>

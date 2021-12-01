@@ -4,12 +4,16 @@ import {Icon} from 'react-native-elements';
 import {colors, size, WP} from '../utilities';
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 
-const CaseDetailCompile = ({caseTitle}) => {
+const CaseDetailCompile = ({navigation, caseTitle}) => {
+  const onSubmit = () => {
+    navigation.navigate('CaseDetails');
+  };
   return (
     <TouchableOpacity
       enabled="false"
       shiftDistanceX="5"
-      style={styles.mainContainer}>
+      style={styles.mainContainer}
+      onPress={onSubmit}>
       <View style={styles.caseTitleContStyle}>
         <Text style={styles.caseTitleTextStyle}>{caseTitle}</Text>
         <Text style={styles.caseNoTextStyle}>21/21</Text>
