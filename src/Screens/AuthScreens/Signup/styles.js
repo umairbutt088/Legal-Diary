@@ -36,10 +36,24 @@ const styles = StyleSheet.create({
     height: WP('12'),
     alignItems: 'center',
     alignSelf: 'center',
-    marginVertical: WP('10'),
+    marginTop: WP('10'),
+    marginBottom: WP('3'),
     backgroundColor: colors.drakBlack,
     borderRadius: WP('2'),
   },
   btnTitleStyle: {fontWeight: 'bold', color: colors.white},
+  bottomTextNoramlText: {
+    fontSize: size.medium,
+    color: colors.drakBlack,
+    fontWeight: 'normal',
+    textAlign: 'center',
+    marginBottom: WP('5'),
+  },
+  bottomTextColoredText: {
+    fontSize: size.medium,
+    color: colors.skyBlue,
+    fontWeight: 'normal',
+    textAlign: 'center',
+  },
 });
 export default styles;

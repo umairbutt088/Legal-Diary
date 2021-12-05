@@ -12,6 +12,9 @@ import CustomTextInput from '../../../Components/TextInput';
 import Custombutton from '../../../Components/button';
 import CustomHeader from '../../../Components/header';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scrollview';
+import {colors, size, WP} from '../../../utilities';
+import {color} from 'react-native-reanimated';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 
 const SignUp = ({navigation}) => {
   const [fname, setFirstname] = useState('jdj1');
@@ -101,6 +104,12 @@ const SignUp = ({navigation}) => {
                 titleStyle={styles.btnTitleStyle}
                 onPressHandler={onSubmit}
               />
+              <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+                <Text style={styles.bottomTextNoramlText}>
+                  Already have{' '}
+                  <Text style={styles.bottomTextColoredText}>an Account ?</Text>
+                </Text>
+              </TouchableOpacity>
             </KeyboardAwareScrollView>
           </ScrollView>
         </View>

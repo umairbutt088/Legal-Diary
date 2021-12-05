@@ -1,9 +1,6 @@
 import React, {useState} from 'react';
-import Modal from 'react-native-modal';
 import CustomTextInput from './TextInput';
-import {Icon} from 'react-native-elements';
 import {colors, size, WP} from '../utilities';
-import DropDownPicker from 'react-native-dropdown-picker';
 import {StyleSheet, Text, View} from 'react-native';
 
 const PlaintifDetails = ({

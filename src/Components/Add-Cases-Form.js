@@ -204,7 +204,6 @@ export default GeneralForm;
 
 const styles = StyleSheet.create({
   mainContainer: {
-    // height: WP('70'),
     width: WP('90'),
     borderWidth: WP('0.5'),
     borderColor: colors.darkGrey,
@@ -227,7 +226,6 @@ const styles = StyleSheet.create({
     color: colors.white,
     fontWeight: 'bold',
     textAlign: 'center',
-    // fontFamily: 'Roboto-Black',
   },
   caseTitleTextMainCont: {
     height: WP('10'),
@@ -266,62 +264,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  // // courtNameContainer: {
-  // //   height: WP('10'),
-  // //   width: WP('90'),
-  // //   backgroundColor: 'transparent',
-  // //   alignItems: 'center',
-  // //   flexDirection: 'row',
-  // //   justifyContent: 'space-between',
-  // //   paddingHorizontal: WP('5'),
-  // // },
-  // // plusSignContainer: {
-  // //   height: WP('8'),
-  // //   width: WP('8'),
-  // //   borderRadius: WP('50'),
-  // //   alignItems: 'center',
-  // //   justifyContent: 'center',
-  // // },
-  // // // Modal Style //
-  // // modalTitleContStyle: {
-  // //   padding: WP('5'),
-  // //   alignItems: 'center',
-  // //   justifyContent: 'center',
-  // //   backgroundColor: 'transparent',
-  // //   overflow: 'hidden',
-  // //   // borderTopLeftRadius: WP('5'),
-  // //   // borderTopRightRadius: WP('5'),
-  // // },
-  // modalButtonsContStyle: {
-  //   height: WP('12'),
-  //   width: WP('70'),
-  //   alignSelf: 'baseline',
-  //   backgroundColor: 'transparent',
-  //   marginTop: WP('6'),
-  //   flexDirection: 'row',
-  //   borderBottomLeftRadius: WP('5'),
-  //   borderBottomRightRadius: WP('5'),
-  //   borderTopWidth: WP('0.2'),
-  //   borderTopColor: colors.lightGrey,
-  // },
-  // cancellButtonContStyle: {
-  //   width: WP('35'),
-  //   backgroundColor: 'transparent',
-  //   height: WP('12'),
-  //   borderBottomLeftRadius: WP('5'),
-  //   alignItems: 'center',
-  //   justifyContent: 'center',
-  //   borderRightWidth: WP('0.2'),
-  //   borderRightColor: colors.lightGrey,
-  // },
-  // addButtonContStyle: {
-  //   width: WP('35'),
-  //   backgroundColor: 'transparent',
-  //   height: WP('12'),
-  //   borderBottomRightRadius: WP('5'),
-  //   borderLeftWidth: WP('0.2'),
-  //   borderLeftColor: colors.lightGrey,
-  //   alignItems: 'center',
-  //   justifyContent: 'center',
-  // },
 });

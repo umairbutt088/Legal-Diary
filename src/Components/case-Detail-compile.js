@@ -3,6 +3,10 @@ import CustomTextInput from './TextInput';
 import {Icon} from 'react-native-elements';
 import {colors, size, WP} from '../utilities';
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import ClientNameComponent from './Client-Name-Component';
+import ClientCallComponent from './Client-Call-Component';
+import CourtNameText from './Court-Name-Text';
+// import {ClientNameComponent} from './Client-Name-Component';
 
 const CaseDetailCompile = ({navigation, caseTitle}) => {
   const onSubmit = () => {
@@ -18,31 +22,41 @@ const CaseDetailCompile = ({navigation, caseTitle}) => {
         <Text style={styles.caseTitleTextStyle}>{caseTitle}</Text>
         <Text style={styles.caseNoTextStyle}>21/21</Text>
       </View>
-      <View style={styles.courtNameContainer}>
+      <CourtNameText
+        CourtName={'Court :'}
+        JudgeName={'Hassan Ali Civil Judge'}
+      />
+      {/* <View style={styles.courtNameContainer}>
         <Text style={styles.courtNameBoldText}>
           Court :{' '}
           <Text style={styles.courtNameLightText}>
             Hassan Ali Civil Judge Lahore
           </Text>
         </Text>
-      </View>
+      </View> */}
       <View style={styles.courtNameContainer}>
         <Text style={styles.courtNameBoldText}>
           Case No : <Text style={styles.courtNameLightText}>21/2021</Text>
         </Text>
       </View>
-      <View style={styles.clientNameContainer}>
-        <Icon name="account-tie" type="material-community" color="blue" />
-        <View style={styles.clientNameTextStyle}>
-          <Text style={styles.courtNameBoldText}>Muhammad Umair Butt</Text>
-        </View>
-      </View>
-      <View style={styles.clientNameContainer}>
+      <ClientNameComponent
+        iconname={'account-tie'}
+        color={'blue'}
+        iconType={'material-community'}
+        DetailText={'Muhammad Umair Butt'}
+      />
+      <ClientCallComponent
+        iconname={'phone'}
+        color={'green'}
+        iconType={'material-community'}
+        DetailText={'03064343088'}
+      />
+      {/* <View style={styles.clientNameContainer}>
         <Icon name="phone" type="material-community" color="green" />
         <View style={styles.clientNameTextStyle}>
           <Text style={styles.courtNameBoldText}>+923064343088</Text>
         </View>
-      </View>
+      </View> */}
       <View style={styles.courtNameContainer}>
         <Text style={styles.courtNameBoldText}>
           On Behalf of :{' '}

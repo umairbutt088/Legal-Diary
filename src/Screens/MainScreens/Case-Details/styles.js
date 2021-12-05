@@ -44,6 +44,7 @@ const styles = StyleSheet.create({
     color: colors.drakBlack,
   },
   courtTypeMainContainer: {
+    marginTop: WP('1'),
     width: WP('90'),
     backgroundColor: 'transparent',
     flexDirection: 'row',
@@ -59,9 +60,8 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   civilTextStyle: {
-    paddingVertical: WP('1'),
     paddingHorizontal: WP('3'),
-    backgroundColor: 'blue',
+    backgroundColor: colors.skyBlue,
     alignSelf: 'flex-start',
     marginLeft: WP('2'),
     borderRadius: WP('5'),
@@ -75,5 +75,17 @@ const styles = StyleSheet.create({
     borderRadius: WP('5'),
     marginTop: WP('2'),
   },
+  clientDetailMainContainer: {
+    alignSelf: 'center',
+    marginTop: WP('1'),
+    width: WP('90'),
+    backgroundColor: 'transparent',
+  },
+  FillingDateContainerStyle: {
+    paddingLeft: WP('1'),
+    marginTop: WP('2'),
+    marginBottom: WP('2'),
+  },
+  courtNameContainerStyle: {paddingLeft: WP('1'), marginTop: WP('2')},
 });
 export default styles;

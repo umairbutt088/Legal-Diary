@@ -1,15 +1,12 @@
 import React from 'react';
 import {View, SafeAreaView, Text, ScrollView} from 'react-native';
 import CustomHeader from '../../../Components/header';
-import {WP, colors, size} from '../../../utilities';
 import styles from './styles';
-import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scrollview';
-import GeneralForm from '../../../Components/Add-Cases-Form';
-import PlaintifDetails from '../../../Components/Plaintif-Details';
-import RespondentDetails from '../../../Components/Respondent-Detail';
-import Custombutton from '../../../Components/button';
-import CaseDetailCompile from '../../../Components/case-Detail-compile';
-import {color} from 'react-native-reanimated';
+import ClientNameComponent from '../../../Components/Client-Name-Component';
+import {colors, WP} from '../../../utilities';
+import ClientCallComponent from '../../../Components/Client-Call-Component';
+import CourtNameText, {FillingDate} from '../../../Components/Court-Name-Text';
+import CourtType, {CaseNo} from '../../../Components/Court-Type';
 
 const CaseDetails = ({navigation}) => {
   return (
@@ -23,70 +20,69 @@ const CaseDetails = ({navigation}) => {
       <ScrollView
         showsVerticalScrollIndicator={false}
         style={styles.scrollViewStyle}>
-        <KeyboardAwareScrollView>
-          <View style={styles.titleContainer}>
-            <Text style={styles.titleTextStyle}>Umair vs. Ali</Text>
+        <View style={styles.titleContainer}>
+          <Text style={styles.titleTextStyle}>Umair vs. Ali</Text>
+        </View>
+        <View style={styles.caseDetailContainer}>
+          <CourtNameText
+            containerStyle={{paddingLeft: WP('1')}}
+            CourtName={'Court :'}
+            JudgeName={'Hassan Ali Civil Judge'}
+          />
+          <View style={styles.courtTypeMainContainer}>
+            <CourtType
+              Type={'Type'}
+              CaseType={'Civil'}
+              TextContainer={{backgroundColor: colors.skyBlue}}
+            />
+            <CaseNo
+              CaseNumber={'CaseNo./Year'}
+              Case={'21/21/2021'}
+              TextContStyle={{paddingHorizontal: WP('0')}}
+            />
           </View>
-          <View style={styles.caseDetailContainer}>
-            <View style={styles.courtDetailContainer}>
-              <Text style={styles.courtNameBoldTextStyle}>
-                Court :{' '}
-                <Text style={styles.courtNameNormalTextStyle}>
-                  Hassan Ali Civil Judge
-                </Text>
-              </Text>
-            </View>
-            <View style={styles.courtTypeMainContainer}>
-              <View style={styles.courtTypeContainer}>
-                <Text style={styles.typeTextStyle}>Type</Text>
-                <View style={styles.civilTextStyle}>
-                  <Text style={styles.courtNameNormalTextStyle}>
-                    Civil Case
-                  </Text>
-                </View>
-              </View>
-              <View style={styles.courtTypeContainer}>
-                <Text style={styles.typeTextStyle}>CaseNo./Year</Text>
-                <View style={styles.caseFilingDateStyle}>
-                  <Text style={styles.courtNameNormalTextStyle}>
-                    21/21/2021
-                  </Text>
-                </View>
-              </View>
-            </View>
-          </View>
-          <View style={styles.titleContainer}>
-            <Text style={styles.titleTextStyle}>Party</Text>
-          </View>
-          <View style={styles.caseDetailContainer}>
-            <View style={styles.courtDetailContainer}>
-              <Text style={styles.courtNameBoldTextStyle}>
-                Court :{' '}
-                <Text style={styles.courtNameNormalTextStyle}>
-                  Hassan Ali Civil Judge
-                </Text>
-              </Text>
-            </View>
-            <View style={styles.courtTypeMainContainer}>
-              <View style={styles.courtTypeContainer}>
-                <Text style={styles.typeTextStyle}>Type</Text>
-                <View style={styles.civilTextStyle}>
-                  <Text style={styles.courtNameNormalTextStyle}>
-                    Civil Case
-                  </Text>
-                </View>
-              </View>
-              <View style={styles.courtTypeContainer}>
-                <Text style={styles.typeTextStyle}>CaseNo./Year</Text>
-                <View style={styles.caseFilingDateStyle}>
-                  <Text style={styles.courtNameNormalTextStyle}>
-                    21/21/2021
-                  </Text>
-                </View>
-              </View>
-            </View>
-          </View>
-        </KeyboardAwareScrollView>
+        </View>
+        <View style={styles.titleContainer}>
+          <Text style={styles.titleTextStyle}>Plaintiff</Text>
+        </View>
+        <View style={styles.clientDetailMainContainer}>
+          <ClientNameComponent
+            containerStyle={{marginLeft: WP('1')}}
+            iconname={'account-tie'}
+            color={'blue'}
+            iconType={'material-community'}
+            DetailText={'Muhammad Umair Butt'}
+          />
+          <ClientCallComponent
+            containerStyle={{marginLeft: WP('1')}}
+            iconname={'phone'}
+            color={'green'}
+            iconType={'material-community'}
+            DetailText={'03064343088'}
+          />
+          <CourtNameText
+            containerStyle={styles.courtNameContainerStyle}
+            CourtName={'Court :'}
+            JudgeName={'Hassan Ali Civil Judge'}
+          />
+          <FillingDate
+            containerStyle={styles.FillingDateContainerStyle}
+            filedUnderSection={'Filled  U/sec :'}
+            JudgeName={'Hassan Ali Civil Judge'}
+          />
+        </View>
+        <View style={styles.titleContainer}>
+          <Text style={styles.titleTextStyle}>Respondent</Text>
+        </View>
+        <View style={styles.clientDetailMainContainer}>
+          <ClientNameComponent
+            containerStyle={{marginLeft: WP('1')}}
+            iconname={'account-tie'}
+            color={'blue'}
+            iconType={'material-community'}
+            DetailText={'Muhammad Umair Butt'}
+          />
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
