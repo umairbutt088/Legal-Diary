@@ -10,6 +10,7 @@ const CustomTextInput = ({
   secureTextEntry,
   inputContStyle,
   onChangeText,
+  multiline,
 }) => {
   return (
     <View style={styles.mainContainerStyle}>
@@ -21,6 +22,8 @@ const CustomTextInput = ({
           secureTextEntry={secureTextEntry}
           keyboardType={keyboardType}
           onChangeText={onChangeText}
+          multiline={multiline}
+          textBreakStrategy="balanced"
         />
       </View>
     </View>

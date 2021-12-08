@@ -62,6 +62,7 @@ export const colors = {
   skyBlue: '#64C0F9',
   magenta: 'rgb(18, 0,255)',
   lightGreen: '#63DAA1',
+  mediumGreen: '#270',
 
   //Black colors#F59695
   drakBlack: '#000000',

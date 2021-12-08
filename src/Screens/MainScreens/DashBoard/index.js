@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import CustomHeader from '../../../Components/header';
 import {appImages} from '../../../utilities/assets';
-import {colors, size, WP} from '../../../utilities';
+import {size, WP} from '../../../utilities';
 import styles from './styles';
 
 const DashBoard = ({navigation}) => {

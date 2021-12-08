@@ -3,10 +3,13 @@ import {View, SafeAreaView, Text, ScrollView} from 'react-native';
 import CustomHeader from '../../../Components/header';
 import styles from './styles';
 import ClientNameComponent from '../../../Components/Client-Name-Component';
-import {colors, WP} from '../../../utilities';
+import {colors, size, WP} from '../../../utilities';
 import ClientCallComponent from '../../../Components/Client-Call-Component';
 import CourtNameText, {FillingDate} from '../../../Components/Court-Name-Text';
 import CourtType, {CaseNo} from '../../../Components/Court-Type';
+import Custombutton from '../../../Components/button';
+import {UnderLine} from '../../../Components';
+import NextDateComponent from '../../../Components/Next-Date-Component';
 
 const CaseDetails = ({navigation}) => {
   return (
@@ -83,6 +86,29 @@ const CaseDetails = ({navigation}) => {
             DetailText={'Muhammad Umair Butt'}
           />
         </View>
+        <UnderLine />
+        <View style={styles.customButtonContainer}>
+          <Custombutton
+            isShow={true}
+            title="Disposal"
+            buttonStyle={styles.customButtonStyle}
+            titleStyle={{fontWeight: 'bold', fontSize: size.large}}
+            onPressHandler={() => navigation.navigate('DisposedCases')}
+          />
+          <Custombutton
+            title="Steps"
+            buttonStyle={[styles.customButtonStyle]}
+            titleStyle={{fontWeight: 'bold', fontSize: size.large}}
+            onPressHandler={() => navigation.navigate('NextStepScreen')}
+          />
+          <Custombutton
+            title="Notes"
+            buttonStyle={styles.customButtonStyle}
+            titleStyle={{fontWeight: 'bold', fontSize: size.large}}
+            onPressHandler={() => navigation.navigate('NewNotes')}
+          />
+        </View>
+        <NextDateComponent />
       </ScrollView>
     </SafeAreaView>
   );

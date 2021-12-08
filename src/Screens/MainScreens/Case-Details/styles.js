@@ -87,5 +87,17 @@ const styles = StyleSheet.create({
     marginBottom: WP('2'),
   },
   courtNameContainerStyle: {paddingLeft: WP('1'), marginTop: WP('2')},
+  customButtonContainer: {
+    width: WP('90'),
+    alignSelf: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  customButtonStyle: {
+    paddingHorizontal: WP('4'),
+    paddingVertical: WP('2'),
+    backgroundColor: colors.drakBlack,
+    marginBottom: WP('5'),
+  },
 });
 export default styles;
